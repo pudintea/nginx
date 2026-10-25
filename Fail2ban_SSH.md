@@ -1,10 +1,4 @@
-Langkah yang sangat cerdas. Melindungi server di level *firewall* adalah kewajiban setelah aplikasi web terekspos ke publik.
-
-Karena Anda menggunakan Cloudflare untuk web (NGINX), ada **satu hal krusial**: Fail2ban secara bawaan memblokir IP di level *firewall* (`iptables`). Jika Anda mengaktifkan Fail2ban standar untuk NGINX, sistem akan melihat IP Cloudflare yang mengirim *request* (meskipun NGINX sudah membaca IP asli di *header*). Akibatnya, Fail2ban bisa memblokir server Cloudflare dan membuat web Anda mati total.
-
-Untuk itu, praktik terbaiknya adalah: gunakan Fail2ban untuk mengamankan SSH, dan gunakan fitur keamanan bawaan Cloudflare (WAF/Rate Limiting) untuk mengamankan akses Web.
-
-Berikut cara instalasi dan konfigurasi amannya:
+# INSTALL FAIL2BAN UBUNTU - SSH
 
 ### 1. Instalasi Fail2ban
 
