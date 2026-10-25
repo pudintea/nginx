@@ -80,3 +80,28 @@ Alih-alih menggunakan Fail2ban untuk NGINX, amankan web dari *bruteforce* langsu
 1. Buka menu **Security** > **WAF** di Cloudflare.
 2. Buat aturan (*Custom Rule*) untuk menantang (*Managed Challenge*) atau memblokir akses ke halaman login sensitif (misalnya URI Path berisi `/login` atau `/admin`) jika datang dari negara selain Indonesia atau memiliki *Threat Score* tinggi.
 3. Gunakan menu **Security** > **Bots** dan aktifkan **Bot Fight Mode** untuk menahan *bruteforce* otomatis.
+
+### Tambahan, Penanganan error
+fail2ban.configreader   [35085]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+
+```
+sudo nano /etc/fail2ban/fail2ban.conf
+```
+
+Cari bagian:
+[Definition]
+
+Tambahkan parameter berikut di bagian tersebut jika belum ada:
+allowipv6 = auto
+
+Simpan, lalu periksa konfigurasi dan restart Fail2ban:
+```
+sudo fail2ban-client -t
+```
+```
+sudo systemctl restart fail2ban
+```
+```
+sudo systemctl status fail2ban
+```
+
