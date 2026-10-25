@@ -7,8 +7,9 @@ cd /etc/nginx/conf.d/
 ```
 Buat File :
 ```
-nano web.pudin.eu.org
+nano web.pudin.eu.org.conf
 ```
+Sekarang wajib ada .conf kaya apache, hehehe
 
 Masukan :
 ```
