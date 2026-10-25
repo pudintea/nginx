@@ -1,38 +1,8 @@
 # Panduan lengkap instal Nginx Stable dari nginx.org di Ubuntu 24.04
 
-Jika kamu membeli VPS baru dengan Ubuntu 24.04 LTS yang masih kosong, cara terbaik adalah memasang Nginx langsung dari repository resmi `nginx.org`, bukan dari repository bawaan Ubuntu.
+Jika kamu membeli VPS baru dengan Ubuntu 24.04 LTS yang masih kosong,
+cara terbaik adalah memasang Nginx langsung dari repository resmi `nginx.org`, bukan dari repository bawaan Ubuntu.
 
-Tujuannya adalah:
-
-- Menggunakan paket Nginx resmi dari `nginx.org`.
-- Menggunakan Nginx Stable, bukan Mainline.
-- Memastikan pembaruan berikutnya tetap berasal dari repository Stable.
-- Memudahkan pengelolaan repository, upgrade, dan pemeriksaan versi.
-- Menghindari konflik dengan paket Nginx bawaan Ubuntu.
-
-Kita akan menggunakan Ubuntu 24.04 dengan codename `noble`.
-
-## Gambaran alur instalasi
-
-1. Persiapkan VPS
-
-Update sistem dan instal dependensi.
-
-2. Tambahkan kunci GPG resmi
-
-Verifikasi tanda tangan paket yang diunduh.
-
-3. Tambahkan repository Stable
-
-Gunakan URL packages/ubuntu, bukan packages/mainline/ubuntu.
-
-4. Instal dan verifikasi Nginx
-
-Pastikan APT mengambil paket dari nginx.org.
-
-5. Kelola pembaruan
-
-Perbarui Nginx tanpa berpindah ke Mainline.
 
 ## Langkah 1 — Update sistem VPS
 
@@ -129,9 +99,6 @@ gpg --show-keys --with-fingerprint \
 
 Dokumentasi Nginx mencantumkan beberapa kunci penandatanganan. Pastikan fingerprint yang ditampilkan sesuai dengan yang tercantum dalam [dokumentasi resmi Nginx](<https://nginx.org/en/linux_packages.html?utm_source=chatgpt.com>). Jangan lanjutkan jika fingerprint tidak cocok.
 
-nginx.org
-
-+1
 
 Mengapa menggunakan file keyring khusus? Karena konfigurasi repository berikutnya akan memakai `signed-by`, sehingga kunci tersebut digunakan untuk memverifikasi paket dari sumber yang ditentukan tanpa perlu menambahkan kunci ke penyimpanan tepercaya global APT.
 
@@ -395,25 +362,6 @@ Namun, jangan langsung menganggap Nginx Stable dari `nginx.org` otomatis masuk k
 
 Untuk VPS produksi, pendekatan yang lebih aman sering kali adalah menjadwalkan pembaruan, memeriksa perubahan paket, lalu melakukan upgrade pada waktu pemeliharaan.
 
-## Checklist akhir untuk VPS baru
-
-### Checklist instalasi
-
-6 dari 6
-
-[x]Ubuntu 24.04 dengan codename noblecat /etc/os-release
-
-[x]Kunci GPG Nginx sudah terpasang dan diverifikasigpg --show-keys --with-fingerprint /usr/share/keyrings/nginx-archive-keyring.gpg
-
-[x]Repository Stable sudah benarcat /etc/apt/sources.list.d/nginx.list
-
-[x]Pinning repository sudah dibuatcat /etc/apt/preferences.d/99nginx
-
-[x]Kandidat Nginx berasal dari nginx.orgapt policy nginx
-
-[x]Nginx aktif dan konfigurasi validsudo nginx -t && systemctl is-active nginx
-
- Salin checklist
 
 Kesimpulan: untuk VPS baru, yang perlu kamu kelola hanya repository Stable, kunci GPG, aturan prioritas, dan pembaruan paket. Setelah repository Stable dipasang dengan benar, kamu tidak perlu mengunduh Nginx secara manual setiap kali ada versi baru. APT akan mengambil versi terbaru yang tersedia dari jalur Stable ketika kamu menjalankan pembaruan.
 
