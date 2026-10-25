@@ -95,6 +95,7 @@ sudo nginx -t
 ```
 # Reload konfigurasi tanpa menghentikan layanan
 ```
+sudo nginx -s reload
 sudo systemctl reload nginx
 ```
 # Restart layanan
