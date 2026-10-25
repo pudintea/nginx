@@ -3,6 +3,9 @@
 Jika kamu membeli VPS baru dengan Ubuntu 24.04 LTS yang masih kosong,
 cara terbaik adalah memasang Nginx langsung dari repository resmi `nginx.org`, bukan dari repository bawaan Ubuntu.
 
+## Dokumentasi
+- (Ubuntu)[https://nginx.org/en/linux_packages.html#Ubuntu]
+- (Debian)[https://nginx.org/en/linux_packages.html#Debian]
 
 ## Langkah 1 — Update sistem VPS
 
