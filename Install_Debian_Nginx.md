@@ -2,6 +2,10 @@ Berikut langkah demi langkah untuk menginstal Nginx dari repository resmi `nginx
 
 Metode ini menggunakan repository APT resmi Nginx sehingga instalasi dan pembaruan Nginx dapat dikelola menggunakan `apt`.
 
+## Dokumentasi
+- (Ubuntu){https://nginx.org/en/linux_packages.html#Ubuntu]
+- (Debian)[https://nginx.org/en/linux_packages.html#Debian]
+
 ## 1. Periksa versi Debian dan arsitektur
 
 Jalankan:
