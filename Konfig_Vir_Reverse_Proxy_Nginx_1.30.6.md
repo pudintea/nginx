@@ -86,8 +86,7 @@ server {
 ```
 
 
-Mengelola Nginx setelah instalasi
-==================================
+## Mengelola Nginx setelah instalasi
 Perintah yang paling sering digunakan:
 
 ### Memeriksa konfigurasi
