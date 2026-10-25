@@ -50,6 +50,11 @@ logpath = /var/log/auth.log
 maxretry = 3
 bantime = 24h
 
+[nginx-http-auth]
+enabled = true
+port = http,https
+logpath = /var/log/nginx/error.log
+
 ```
 
 Simpan file dan keluar dari editor (`Ctrl+O`, `Enter`, lalu `Ctrl+X`).
