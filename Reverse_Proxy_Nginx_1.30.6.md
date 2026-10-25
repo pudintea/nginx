@@ -1,12 +1,17 @@
+# KONFIGURASI REVERSE PROXY NGINX 1.30.6 STABLE
+
 FIle ada di 
 /etc/nginx/conf.d/
-
-> cd /etc/nginx/conf.d/
-
+```
+cd /etc/nginx/conf.d/
+```
 Buat File :
-> nano web.pudin.eu.org
-Masukan :
+```
+nano web.pudin.eu.org
+```
 
+Masukan :
+```
 server {
     listen 80;
     server_name web.pudin.eu.org;
@@ -77,7 +82,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
-
+```
 
 
 Mengelola Nginx setelah instalasi
@@ -85,18 +90,24 @@ Mengelola Nginx setelah instalasi
 Perintah yang paling sering digunakan:
 
 # Memeriksa konfigurasi
-> sudo nginx -t
-
+```
+sudo nginx -t
+```
 # Reload konfigurasi tanpa menghentikan layanan
-> sudo systemctl reload nginx
-
+```
+sudo systemctl reload nginx
+```
 # Restart layanan
-> sudo systemctl restart nginx
-
+```
+sudo systemctl restart nginx
+```
 # Melihat log error secara langsung
-> sudo tail -f /var/log/nginx/error.log
-
+```
+sudo tail -f /var/log/nginx/error.log
+```
 # Memperbarui paket dari repository
-> sudo apt update && sudo apt install --only-upgrade nginx
+```
+sudo apt update && sudo apt install --only-upgrade nginx
+```
 
-============== PUDIN SAEPUDIN ==============
+## BY PUDIN SAEPUDIN
