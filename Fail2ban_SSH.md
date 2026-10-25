@@ -113,4 +113,7 @@ sudo systemctl restart fail2ban
 ```
 sudo systemctl status fail2ban
 ```
-
+Lihat Log
+```
+sudo journalctl -u fail2ban -n 50 --no-pager
+```
