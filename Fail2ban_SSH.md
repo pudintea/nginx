@@ -89,10 +89,14 @@ sudo nano /etc/fail2ban/fail2ban.conf
 ```
 
 Cari bagian:
+```
 [Definition]
+```
 
 Tambahkan parameter berikut di bagian tersebut jika belum ada:
+```
 allowipv6 = auto
+```
 
 Simpan, lalu periksa konfigurasi dan restart Fail2ban:
 ```
