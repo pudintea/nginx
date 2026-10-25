@@ -90,26 +90,31 @@ Mengelola Nginx setelah instalasi
 ==================================
 Perintah yang paling sering digunakan:
 
-# Memeriksa konfigurasi
+### Memeriksa konfigurasi
 ```
 sudo nginx -t
 ```
-# Reload konfigurasi tanpa menghentikan layanan
+### Reload konfigurasi tanpa menghentikan layanan
 ```
 sudo nginx -s reload
 sudo systemctl reload nginx
 ```
-# Restart layanan
+### Restart layanan
 ```
 sudo systemctl restart nginx
 ```
-# Melihat log error secara langsung
+### Melihat log error secara langsung
 ```
 sudo tail -f /var/log/nginx/error.log
 ```
-# Memperbarui paket dari repository
+### Memperbarui paket dari repository
 ```
 sudo apt update && sudo apt install --only-upgrade nginx
 ```
+### Lihat Log Nginx
+```
+sudo journalctl -u nginx -n 50 --no-pager
+```
+
 
 ## BY PUDIN SAEPUDIN
