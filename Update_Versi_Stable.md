@@ -43,6 +43,10 @@ Pin: release o=nginx
 Pin-Priority: 900
 EOF
 ```
+### Test apakah repository sudah ke nginx.org
+```
+apt-cache policy nginx
+```
 
 ## 5. Update repository
 ```
