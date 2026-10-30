@@ -5,6 +5,11 @@ Bisa. Untuk Ubuntu 24.04, kamu cukup mengganti repository `mainline` menjadi rep
 Menurut dokumentasi resmi Nginx, repository Stable menggunakan URL `https://nginx.org/packages/ubuntu`.
 nginx.org
 
+## Instal dependensi
+```
+sudo apt update
+sudo apt install -y curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+```
 
 ## 1. Download dan simpan GPG key resmi Nginx
 ```
