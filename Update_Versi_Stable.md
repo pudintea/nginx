@@ -28,13 +28,24 @@ Sesuaikan fingerprint tersebut.
 echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] https://nginx.org/packages/ubuntu noble nginx" \
 | sudo tee /etc/apt/sources.list.d/nginx.list
 ```
-## 4. Update repository
+## 4. Prioritaskan paket dari nginx.org
+Buat aturan agar APT memilih paket dari repository resmi Nginx daripada paket bawaan Ubuntu:
+```
+sudo tee /etc/apt/preferences.d/99nginx <<'EOF'
+Package: *
+Pin: origin nginx.org
+Pin: release o=nginx
+Pin-Priority: 900
+EOF
+```
+
+## 5. Update repository
 ```
 sudo apt clean
 sudo apt update
 ```
 
-## 5. Upgrade Nginx ke versi Stable
+## 6. Upgrade Nginx ke versi Stable
 
 Simulasikan terlebih dahulu:
 
@@ -61,7 +72,7 @@ nginx -v
 sudo nginx -t
 ```
 
-## 6. Pastikan pembaruan berikutnya tetap dari Stable
+## 7. Pastikan pembaruan berikutnya tetap dari Stable
 
 Setelah konfigurasi selesai, pembaruan rutin bisa dilakukan dengan:
 
