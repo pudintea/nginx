@@ -85,12 +85,10 @@ server {
         proxy_set_header X-Forwarded-Host $host;
         proxy_set_header X-Forwarded-Port $server_port;
 
-        # HTTP protocol
-        proxy_http_version 1.1;
-
         # WebSocket support
+        proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Connection "upgrade";
 
         # Timeout
         proxy_connect_timeout 10s;
